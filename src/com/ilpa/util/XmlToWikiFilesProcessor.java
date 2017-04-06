@@ -77,16 +77,23 @@ public class XmlToWikiFilesProcessor {
 				// Source
 				JAXBContext jc = JAXBContext.newInstance(Report.class);
 				JAXBSource source = new JAXBSource(jc, report);
+				
+				String filePath = outputDirectory + System.getProperty("file.separator")
+				+ FilenameUtils.getBaseName(xmlFile.getName()) + WIKI_FILE_EXTENTION;
 
 				// Result
+				//StreamResult result = new StreamResult(new File(filePath));
+				
 				StreamResult result = new StreamResult(System.out);
+				
+				
 
 				// Transform
 				transformer.transform(source, result);
 
 				// Write result to .wiki file
-				String filePath = outputDirectory + System.getProperty("file.separator")
-						+ FilenameUtils.getBaseName(xmlFile.getName()) + WIKI_FILE_EXTENTION;
+//				String filePath = outputDirectory + System.getProperty("file.separator")
+//						+ FilenameUtils.getBaseName(xmlFile.getName()) + WIKI_FILE_EXTENTION;
 
 				System.out.println("Writing file :" + filePath);
 

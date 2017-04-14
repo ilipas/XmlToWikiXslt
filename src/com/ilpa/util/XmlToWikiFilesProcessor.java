@@ -95,7 +95,7 @@ public class XmlToWikiFilesProcessor {
 //				String filePath = outputDirectory + System.getProperty("file.separator")
 //						+ FilenameUtils.getBaseName(xmlFile.getName()) + WIKI_FILE_EXTENTION;
 
-				System.out.println("Writing file :" + filePath);
+				System.out.println("\nWriting file :" + filePath);
 
 				// FileUtils.writeStringToFile(new File(filePath),
 				// stringBuilder.toString());
